@@ -1,6 +1,6 @@
 import { render, cleanup, fireEvent } from "@testing-library/react";
 
-import Button from "../Button";
+import Button from "../../components/Button";
 
 afterEach(cleanup);
 
