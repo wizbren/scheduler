@@ -35,7 +35,7 @@ test("useVisualMode should return to previous mode", () => {
 
   act(() => {
     result.current.transition(SECOND);
-    result.current.transition(THIRD);
+    result.current.transition(THIRD, true);
     result.current.back();
   })
 
