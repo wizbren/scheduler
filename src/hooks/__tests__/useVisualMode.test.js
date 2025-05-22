@@ -9,6 +9,7 @@ test("Initial test", () => {
 
 
 const FIRST = "FIRST";
+const SECOND = "SECOND";
 
 test("useVisualMode should initialize with default value", () => {
   const { result } = renderHook(() => useVisualMode(FIRST));
