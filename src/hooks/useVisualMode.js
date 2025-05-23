@@ -9,7 +9,11 @@ export default function useVisualMode(initial) {
   }
 
   function back() {
-    setHistory(prev => [...prev.slice(0, prev.length - 1)]);
+    setHistory(prev => {
+      if (prev.length < 2) return prev;
+
+      return [...prev.slice(0, prev.length - 1)];
+    })
   }
 
   return {
