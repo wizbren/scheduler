@@ -44,25 +44,40 @@ export default function Appointment(props) {
   return (
     <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
-      {mode === EMPTY && (
-        <Empty onAdd={() => transition(CREATE)} />
-      )}
-
-      {mode === SHOW && (
-        <Show
-          student={props.interview.student}
+      {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
+      {mode === SHOW &&
+        <Show student={props.interview.student}
           interviewer={props.interview.interviewer}
-          onDelete={() => console.log("CONFIRM")}
-          onEdit={() => console.log("EDIT")}
+          onDelete={() => transition(CONFIRM)}
+          onEdit={() => transition(EDIT)}
         />
-      )}
-
+      }
       {mode === CREATE && (
+        <Form interviewers={props.interviewers} onCancel={back} onSave={save} />
+      )}
+      {mode === EDIT && (
         <Form
+          name={props.interview.student}
+          interviewer={props.interview.interviewer.id}
           interviewers={props.interviewers}
           onCancel={back}
           onSave={save}
         />
+      )}
+      {mode === SAVING && <Status message="Saving" />}
+      {mode === DELETING && <Status message="Deleting" />}
+      {mode === CONFIRM && (
+        <Confirm
+          message="Are you sure you would like to delete?"
+          onCancel={back}
+          onConfirm={destroy}
+        />
+      )}
+      {mode === ERROR_SAVE && (
+        <Error message="Could not book appointment." onClose={back} />
+      )}
+      {mode === ERROR_DELETE && (
+        <Error message="Could not cancel appointment." onClose={back} />
       )}
     </article>
   );
