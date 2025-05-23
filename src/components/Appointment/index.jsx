@@ -5,6 +5,9 @@ import useVisualMode from "../../hooks/useVisualMode";
 import "./styles.scss";
 
 
+const EMPTY = "EMPTY";
+const SHOW = "SHOW";
+
 export default function Appointment(props) {
   return (
     <article className="appointment" data-testid="appointment">
