@@ -7,10 +7,11 @@ import "./styles.scss";
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
+const CREATE = "CREATE";
 
 export default function Appointment(props) {
   const {mode, transition, back} = useVisualMode(props.interview ? SHOW : EMPTY);
-  
+
   return (
     <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
