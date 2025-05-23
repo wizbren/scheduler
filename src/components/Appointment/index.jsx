@@ -1,6 +1,7 @@
 import Header from "./Header";
 import Empty from "./Empty";
 import Show from "./Show";
+import Form from "./Form";
 import useVisualMode from "../../hooks/useVisualMode";
 import "./styles.scss";
 
@@ -26,6 +27,10 @@ export default function Appointment(props) {
           onDelete={() => console.log("CONFIRM")}
           onEdit={() => console.log("EDIT")}
         />
+      )}
+
+      {mode === CREATE && (
+        <Form interviewers={props.interviewers} />
       )}
     </article>
   );
