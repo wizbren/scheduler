@@ -8,7 +8,7 @@ describe("Form", () => {
   const interviewers = [
     {
       id: 1,
-      student: "Sylvia Palmer",
+      name: "Sylvia Palmer",
       avatar: "https://i.imgur.com/LpaY82x.png"
     }
   ];
