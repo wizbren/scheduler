@@ -46,6 +46,7 @@ export default function Form(props) {
               setName(event.target.value);
             }}
           />
+          {error && <section className="appointment__validation">{error}</section>}
         </form>
         <InterviewerList
           interviewers={props.interviewers}
