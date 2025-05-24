@@ -9,7 +9,7 @@ describe("Application", () => {
 
     return findByText("Monday").then(() => {
       fireEvent.click(document.querySelector("[data-testid='day'] [alt='Tuesday']"));
-      return findByText("Leopold Silvers");
+      return findByText("Potato Potato");
     });
   });
 });
