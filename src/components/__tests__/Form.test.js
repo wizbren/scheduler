@@ -58,11 +58,11 @@ describe("Form", () => {
     expect(onSave).not.toHaveBeenCalled();
   })
 
-  
-  it("validates that the interviewer cannot be null", () => {
+
+  it("calls onSave function when the name and interviewer is defined", () => {
     const onSave = jest.fn();
     const { getByText, queryByText } = render(
-      <Form interviewers={interviewers} name="Lydia Miller-Jones" interviewer={1} onSave={onSave} />
+      <Form interviewers={interviewers} name="Lydia Miller-Jones" interviewer={interviewers[0].id} onSave={onSave} />
     );
 
     fireEvent.click(getByText("Save"));
