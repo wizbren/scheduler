@@ -14,14 +14,20 @@ describe("Form", () => {
   ];
 
   it("renders without student name if not provided", () => {
-    // Where is getByPlaceholderText coming from?
+    const { getByPlaceholderText } = render(
+      <Form interviewers={interviewers} />
+    );
+
     const input = getByPlaceholderText("Enter Student Name")
     expect(input).toHaveValue("");
   });
 
   it("renders with initial student name", () => {
-    // Where is getByTestId coming from?
-    const input = getByTestId("student-name-input")
+    const { getByTestId } = render(
+      <Form interviewers={interviewers} name="Lydia Miller-Jones" />
+    );
+
+    const input = getByTestId("student-name-input");
     expect(input).toHaveValue("Lydia Miller-Jones");
   });
 });
