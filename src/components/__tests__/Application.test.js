@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, findByText } from "@testing-library/react";
+import { render, fireEvent, findByText, prettyDOM } from "@testing-library/react";
 import Application from "../Application";
 
 
