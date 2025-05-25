@@ -25,6 +25,7 @@ export default function Form(props) {
     }
     if (interviewer === null) {
       setError("please select an interviewer");
+      return;
     }
 
     setError("");
