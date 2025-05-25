@@ -3,7 +3,6 @@ import Empty from "./Empty";
 import Show from "./Show";
 import Form from "./Form";
 import useVisualMode from "../../hooks/useVisualMode";
-import Status from "./Status";
 import "./styles.scss";
 
 
