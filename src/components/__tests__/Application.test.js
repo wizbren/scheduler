@@ -7,7 +7,8 @@ import {
   getAllByTestId,
   getByAltText,
   getByPlaceholderText,
-  getByText
+  getByText,
+  queryByText
 } from "@testing-library/react";
 import Application from "../Application";
 
@@ -38,6 +39,10 @@ describe("Application", () => {
 
     debug();
     expect(getByText(appointment, "Saving")).toBeInTheDocument();
-    await findByText(appointment, "Lydia Miller-Jones");  
+    await findByText(appointment, "Lydia Miller-Jones");
+
+    const day = getAllByTestId(container, "day").find((day) =>
+      queryByText(day, "Monday")
+    );
   });
 });
