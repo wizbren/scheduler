@@ -49,7 +49,7 @@ describe("Application", () => {
   });
 
   it("loads data, cancels an interview and increases the spots remaining for Monday by 1", async () => {
-    const { container, debug } = render(<Application />);
+    const { container, debug, queryByAltText } = render(<Application />);
 
     await findByText(container, "Archie Cohen");
 
