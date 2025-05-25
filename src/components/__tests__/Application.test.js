@@ -8,7 +8,8 @@ import {
   getByAltText,
   getByPlaceholderText,
   getByText,
-  queryByText
+  queryByText,
+  queryByAltText
 } from "@testing-library/react";
 import axios from "axios";
 import Application from "../Application";
